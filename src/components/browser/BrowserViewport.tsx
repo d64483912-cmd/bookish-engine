@@ -221,7 +221,7 @@ export const BrowserViewport: React.FC = () => {
                     size="small"
                     onClick={handleOpenInNewTab}
                   >
-                    <externalLink className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
                   </Button>
                 </Tooltip>
 
