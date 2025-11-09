@@ -244,7 +244,7 @@ export const BrowserViewport: React.FC = () => {
                     variant="ghost"
                     size="small"
                   >
-                    <settings className="w-4 h-4" />
+                    <Settings className="w-4 h-4" />
                   </Button>
                 </Tooltip>
               </div>
