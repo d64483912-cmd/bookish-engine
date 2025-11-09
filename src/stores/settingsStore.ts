@@ -67,7 +67,7 @@ interface SettingsActions {
 
 export const useSettingsStore = create<SettingsState & SettingsActions>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       // Initial State
       preferences: DEFAULT_PREFERENCES,
       sidebarWidth: 280,

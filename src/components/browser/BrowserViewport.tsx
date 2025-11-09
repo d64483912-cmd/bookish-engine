@@ -6,10 +6,8 @@ import {
   Copy,
   ExternalLink,
   Settings,
-  Eye,
-  EyeOff,
-  Play,
-  Pause,
+  Sparkles,
+  Search,
 } from 'lucide-react';
 import { useBrowserStore } from '@/stores';
 import { Button, Tooltip } from '@/components/ui';
@@ -289,6 +287,3 @@ export const BrowserViewport: React.FC = () => {
     </div>
   );
 };
-
-// Import required icon
-import { Sparkles, Search } from 'lucide-react';

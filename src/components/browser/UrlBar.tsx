@@ -6,13 +6,13 @@ import {
   Globe,
   Star,
   Sparkles,
-  Command,
   ArrowRight,
   Shield,
 } from 'lucide-react';
 import { useBrowserStore } from '@/stores';
-import { Input, Tooltip } from '@/components/ui';
-import { formatUrl, isValidUrl, buildSearchUrl, getDomainFromUrl } from '@/utils/helpers';
+import { Input, Tooltip, Button } from '@/components/ui';
+import { formatUrl, isValidUrl, buildSearchUrl } from '@/utils/helpers';
+import clsx from 'clsx';
 
 export const UrlBar: React.FC = () => {
   const [isFocused, setIsFocused] = useState(false);
@@ -24,7 +24,6 @@ export const UrlBar: React.FC = () => {
   const {
     getActiveTab,
     navigateTo,
-    updateSettings,
     settings,
   } = useBrowserStore();
 
@@ -113,16 +112,6 @@ export const UrlBar: React.FC = () => {
     }
   };
 
-  const getDisplayUrl = () => {
-    if (!activeTab) return '';
-    try {
-      const url = new URL(activeTab.url);
-      return url.hostname + url.pathname;
-    } catch {
-      return activeTab.url;
-    }
-  };
-
   const isBookmarked = () => {
     // This would check if current URL is bookmarked
     // Implementation would depend on bookmarks state
@@ -147,7 +136,7 @@ export const UrlBar: React.FC = () => {
           onBlur={handleBlur}
           onSubmit={handleSubmit}
           placeholder="Search or enter address..."
-          className={cn(
+          className={clsx(
             'pl-10 pr-32',
             isFocused && 'bg-surface-light'
           )}
@@ -251,9 +240,4 @@ export const UrlBar: React.FC = () => {
       </AnimatePresence>
     </div>
   );
-};
-
-// Helper function for className concatenation
-const cn = (...classes: (string | undefined)[]) => {
-  return classes.filter(Boolean).join(' ');
 };

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Pin, Loader2, Globe } from 'lucide-react';
 import { Tab } from '@/types';
-import { Button } from '@/components/ui';
 import { cn } from '@/utils/helpers';
 
 interface TabItemProps {

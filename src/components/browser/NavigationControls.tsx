@@ -6,10 +6,10 @@ import {
   RotateCw,
   Home,
   ArrowLeftFromLine,
-  ArrowRightFromLine,
 } from 'lucide-react';
 import { useBrowserStore } from '@/stores';
 import { Button, Tooltip } from '@/components/ui';
+import clsx from 'clsx';
 
 export const NavigationControls: React.FC = () => {
   const {
@@ -93,7 +93,7 @@ export const NavigationControls: React.FC = () => {
             variant="ghost"
             size="small"
             onClick={handleRefresh}
-            className={cn(
+            className={clsx(
               'p-2',
               isLoading && 'text-error'
             )}
@@ -129,9 +129,4 @@ export const NavigationControls: React.FC = () => {
       </div>
     </div>
   );
-};
-
-// Helper function for className concatenation
-const cn = (...classes: (string | undefined)[]) => {
-  return classes.filter(Boolean).join(' ');
 };
