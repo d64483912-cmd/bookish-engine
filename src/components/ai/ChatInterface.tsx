@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Bot, User, Copy, RefreshCw, X } from 'lucide-react';
+import { Send, Bot, User, Copy, RefreshCw } from 'lucide-react';
 import { useAIStore } from '@/stores';
 import { Button, Input } from '@/components/ui';
 import { formatRelativeTime, copyToClipboard } from '@/utils/helpers';

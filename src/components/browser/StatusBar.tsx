@@ -4,18 +4,14 @@ import {
   Wifi,
   WifiOff,
   Shield,
-  ShieldCheck,
   Globe,
   Lock,
   Unlock,
   Activity,
   Download,
-  Upload,
-  Info,
 } from 'lucide-react';
 import { useBrowserStore, useAIStore } from '@/stores';
 import { Tooltip } from '@/components/ui';
-import { formatFileSize, formatDuration } from '@/utils/helpers';
 
 export const StatusBar: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());

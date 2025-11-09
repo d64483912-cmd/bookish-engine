@@ -19,7 +19,7 @@ import { buildSearchUrl } from '@/utils/helpers';
 
 export const HomePage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const { createTab, updateSettings } = useBrowserStore();
+  const { createTab } = useBrowserStore();
 
   const handleSearch = (query: string) => {
     if (query.trim()) {

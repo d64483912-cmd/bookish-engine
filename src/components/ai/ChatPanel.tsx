@@ -2,9 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
-  Send,
   Bot,
-  User,
   Settings,
   Sparkles,
   Brain,
@@ -15,20 +13,17 @@ import {
   Play,
 } from 'lucide-react';
 import { useAIStore } from '@/stores';
-import { Button, Input, Tooltip } from '@/components/ui';
+import { Button, Tooltip } from '@/components/ui';
 import { ChatInterface } from './ChatInterface';
 import { AgentType } from '@/types';
 
 export const ChatPanel: React.FC = () => {
   const [activeView, setActiveView] = useState<'chat' | 'agents'>('chat');
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const {
     messages,
-    isLoading,
     isStreaming,
-    sendMessage,
     toggleChatPanel,
     activeAgents,
     createAgent,

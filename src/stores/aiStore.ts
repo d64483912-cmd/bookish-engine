@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { AIState, ChatMessage, AIAgent, AgentTask, AIModel, AISettings, AgentType } from '@/types';
+import { AIState, ChatMessage, AIAgent, AIModel, AISettings, AgentType } from '@/types';
 
 const DEFAULT_MODELS: AIModel[] = [
   {
@@ -120,8 +120,8 @@ export const useAIStore = create<AIState & AIActions>()(
           content: message.trim(),
         };
 
-        set((prevState) => ({
-          messages: [...prevState.messages, { ...userMessage, id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`, timestamp: Date.now() }],
+        set((state) => ({
+          messages: [...state.messages, { ...userMessage, id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`, timestamp: Date.now() }],
           isLoading: true,
           isStreaming: true,
         }));
@@ -140,15 +140,15 @@ export const useAIStore = create<AIState & AIActions>()(
             agentUsed: state.settings.selectedModel,
           };
 
-          set((prevState) => ({
-            messages: [...prevState.messages, assistantMessage],
+          set((state) => ({
+            messages: [...state.messages, assistantMessage],
             isLoading: false,
             isStreaming: false,
           }));
 
         } catch (error) {
           console.error('Error sending message:', error);
-          set((prevState) => ({
+          set(() => ({
             isLoading: false,
             isStreaming: false,
             lastError: error instanceof Error ? error.message : 'Unknown error occurred',
@@ -372,7 +372,7 @@ export const useAIStore = create<AIState & AIActions>()(
 );
 
 // Simulated AI call - replace with actual OpenRouter integration
-async function simulateAICall(message: string, settings: AISettings): Promise<string> {
+async function simulateAICall(_message: string, _settings: AISettings): Promise<string> {
   await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
 
   const responses = [

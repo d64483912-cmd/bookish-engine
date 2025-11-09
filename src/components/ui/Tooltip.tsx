@@ -12,7 +12,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   ...props
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {

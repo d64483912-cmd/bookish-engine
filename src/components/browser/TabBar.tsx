@@ -4,7 +4,6 @@ import { Plus, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useBrowserStore } from '@/stores';
 import { TabItem } from './TabItem';
 import { Button } from '@/components/ui';
-import { cn } from '@/utils/helpers';
 
 export const TabBar: React.FC = () => {
   const {
@@ -165,7 +164,7 @@ export const TabBar: React.FC = () => {
       </div>
 
       {/* Tab overflow indicator */}
-      <style jsx>{`
+      <style>{`
         .scrollbar-hide {
           -ms-overflow-style: none;
           scrollbar-width: none;

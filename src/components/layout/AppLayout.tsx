@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sparkles, Bookmark, History, Download } from 'lucide-react';
+import { Menu, Sparkles } from 'lucide-react';
 
 import { useBrowserStore, useAIStore } from '@/stores';
 import { Button } from '@/components/ui';
@@ -15,10 +15,7 @@ import { Sidebar } from './Sidebar';
 export const AppLayout: React.FC = () => {
   const {
     sidebarCollapsed,
-    rightPanelOpen,
     toggleSidebar,
-    toggleRightPanel,
-    getActiveTab,
   } = useBrowserStore();
 
   const {
@@ -26,8 +23,6 @@ export const AppLayout: React.FC = () => {
     toggleChatPanel,
     isStreaming,
   } = useAIStore();
-
-  const activeTab = getActiveTab();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
