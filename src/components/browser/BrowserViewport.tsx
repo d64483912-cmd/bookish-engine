@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  maximize,
-  minimize,
-  copy,
-  externalLink,
-  settings,
-  eye,
-  eyeOff,
-  play,
-  pause,
+  Maximize,
+  Minimize,
+  Copy,
+  ExternalLink,
+  Settings,
+  Eye,
+  EyeOff,
+  Play,
+  Pause,
 } from 'lucide-react';
 import { useBrowserStore } from '@/stores';
 import { Button, Tooltip } from '@/components/ui';
