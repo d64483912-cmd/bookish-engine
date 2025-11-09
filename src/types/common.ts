@@ -84,6 +84,8 @@ export interface InputProps extends ComponentProps {
   onChange?: (value: string) => void;
   onKeyDown?: (event: React.KeyboardEvent) => void;
   onSubmit?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
 }
 
 // Error types
