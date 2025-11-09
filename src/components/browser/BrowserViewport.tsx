@@ -68,7 +68,7 @@ export const BrowserViewport: React.FC = () => {
 
   // Handle mouse movement for showing/hiding controls
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: number;
 
     const handleMouseMove = () => {
       setShowControls(true);
