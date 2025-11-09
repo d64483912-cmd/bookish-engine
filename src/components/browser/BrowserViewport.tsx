@@ -211,7 +211,7 @@ export const BrowserViewport: React.FC = () => {
                     size="small"
                     onClick={handleCopyUrl}
                   >
-                    <copy className="w-4 h-4" />
+                    <Copy className="w-4 h-4" />
                   </Button>
                 </Tooltip>
 
