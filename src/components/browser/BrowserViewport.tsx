@@ -232,9 +232,9 @@ export const BrowserViewport: React.FC = () => {
                     onClick={toggleFullscreen}
                   >
                     {isFullscreen ? (
-                      <minimize className="w-4 h-4" />
+                      <Minimize className="w-4 h-4" />
                     ) : (
-                      <maximize className="w-4 h-4" />
+                      <Maximize className="w-4 h-4" />
                     )}
                   </Button>
                 </Tooltip>
